@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
         //打开或创建test.db数据库
         SQLiteDatabase db = openOrCreateDatabase("test.db", Context.MODE_PRIVATE, null);
         db.execSQL("DROP TABLE IF EXISTS person");
-
+        // 如果表不存在就创建
+ //db.execSQL("CREATE TABLE IF NOT EXISTS device (_id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, age SMALLINT)");
         //创建person表
         db.execSQL("CREATE TABLE person (_id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, age SMALLINT)");
         PersonEntity person = new PersonEntity();
